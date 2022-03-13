@@ -23,14 +23,14 @@ public class Main {
             
             while (entrada.hasNextLine()) 
             {
-                String line = entrada.nextLine();
+                String dado = entrada.nextLine();
             
-            if (checaArquivo(line))
+            if (checaArquivo(dado))
             {
-            CriaTxt.escreveTxt(line + "- Dado Valido\n");
+            CriaTxt.escreveTxt(dado + "- Dado Valido\n");
             }
             else
-            CriaTxt.escreveTxt(line + "- Dado Invalido\n");
+            CriaTxt.escreveTxt(dado + "- Dado Invalido\n");
             }
     }
 }

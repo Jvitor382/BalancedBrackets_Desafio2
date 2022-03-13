@@ -14,9 +14,13 @@ import java.util.Deque;
 public class ChecaDado {
     public static boolean checaArquivo(String dado)
     {
-        Deque<Character> fila
-            = new ArrayDeque<Character>();
+        Deque<Character> fila = new ArrayDeque<Character>();
  
+        if(dado.length()%2 != 0)
+        {
+            return false;
+        }
+        
         for (int i = 0; i < dado.length(); i++)
         {
             char x = dado.charAt(i);
@@ -28,23 +32,24 @@ public class ChecaDado {
             }
             if (fila.isEmpty())
                 return false;
-            char check;
+            char caracter;
+            
             switch (x) {
             case ')':
-                check = fila.pop();
-                if (check == '{' || check == '[')
+                caracter = fila.pop();
+                if (caracter == '{' || caracter == '[')
                     return false;
                 break;
  
             case '}':
-                check = fila.pop();
-                if (check == '(' || check == '[')
+                caracter = fila.pop();
+                if (caracter == '(' || caracter == '[')
                     return false;
                 break;
  
             case ']':
-                check = fila.pop();
-                if (check == '(' || check == '{')
+                caracter = fila.pop();
+                if (caracter == '(' || caracter == '{')
                     return false;
                 break;
             }
